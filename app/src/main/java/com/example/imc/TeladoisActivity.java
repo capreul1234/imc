@@ -16,6 +16,9 @@ public class TeladoisActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.teladois);
         double imc = getIntent().getDoubleExtra("IMC", 0D);
+        imageView = findViewById(R.id.imageView);
+        textViewimc = findViewById(R.id.textViewimc);
+        dica = findViewById(R.id.dica);
 
         if(imc < 18){
             imageView.setImageResource(R.drawable.vovo);

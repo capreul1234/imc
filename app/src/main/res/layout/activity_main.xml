@@ -6,6 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="414dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="199dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/academia"
+
+        app:layout_constraintBottom_toTopOf="@+id/calcular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/academia"
+        tools:srcCompat="@drawable/academia" />
+
     <Button
         android:id="@+id/calcular"
         android:layout_width="wrap_content"
@@ -14,29 +30,16 @@
         android:layout_marginEnd="89dp"
         android:layout_marginBottom="62dp"
         android:background="#030004"
+
+        android:onClick="@string/app_name"
         android:text="calcular"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.385"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="414dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="199dp"
-        android:adjustViewBounds="true"
-        android:src="@drawable/academia"
-        app:layout_constraintBottom_toTopOf="@+id/calcular"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/academia"
-        tools:srcCompat="@drawable/academia" />
 
     <TextView
         android:id="@+id/textView2"
@@ -54,7 +57,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageButton" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+        android:id="@+id/textInputLayoutAltura"
         android:layout_width="154dp"
         android:layout_height="49dp"
         android:layout_marginStart="17dp"
@@ -62,41 +65,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <EditText
             android:id="@+id/altura"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="ALTURA"
-            android:text="ALTURA" />
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Altura"
+            android:inputType="numberDecimal" />
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
+        android:id="@+id/textInputLayoutPeso"
         android:layout_width="154dp"
         android:layout_height="49dp"
         android:layout_marginStart="14dp"
         android:layout_marginTop="21dp"
-        app:layout_constraintStart_toEndOf="@+id/textInputLayout"
+        app:layout_constraintStart_toEndOf="@+id/textInputLayoutAltura"
         app:layout_constraintTop_toBottomOf="@+id/textView2">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/peso"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="peso"
-            android:text="peso" />
+            android:hint="peso" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/resultado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="163dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="190dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

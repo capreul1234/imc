@@ -12,29 +12,31 @@ import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity {
 
-   TextInputLayout maltura,peso;
-    Button cal;
+    TextInputLayout maltura, peso;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        maltura = findViewById(R.id.altura);
-        peso = findViewById(R.id.peso);
-        cal = findViewById(R.id.calcular);
+        maltura = findViewById(R.id.textInputLayoutAltura);
+        peso = findViewById(R.id.textInputLayoutPeso);
+        Button cal = findViewById(R.id.calcular);
         cal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double alturaa =Double.parseDouble(maltura.getEditText().toString());
-                double pesoo =Double.parseDouble(peso.getEditText().toString());
-                double imc = pesoo /(alturaa * alturaa);
+                double alturaa = Double.parseDouble(Objects.requireNonNull(maltura.getEditText()).getText().toString());
+                double pesoo = Double.parseDouble(Objects.requireNonNull(peso.getEditText()).getText().toString());
+                double imc = pesoo / (alturaa * alturaa);
 
 
                 Intent intent = new Intent(getApplicationContext(), TeladoisActivity.class);
-                intent.putExtra("IMC",imc);
-
+                intent.putExtra("IMC", imc);
+                startActivity(intent);
 
 
             }
